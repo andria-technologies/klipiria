@@ -28,7 +28,7 @@
             <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-cyanAccent to-magentaAccent bg-clip-text text-transparent">KLIPIRIA</span>
             <span class="text-xs bg-gray-800 text-cyanAccent px-2 py-0.5 rounded-full border border-cyanAccent/30">AI v1.0</span>
         </div>
-        <div class="text-sm text-gray-400">Investor Demo Mode</div>
+        <div class="text-sm text-gray-400">Prototype Demo Mode</div>
     </header>
 
     <!-- Main Content -->
@@ -37,4 +37,24 @@
             Ubah Video Panjang Jadi <span class="bg-gradient-to-r from-cyanAccent to-magentaAccent bg-clip-text text-transparent">Klip Viral</span> Otomatis
         </h1>
         <p class="text-gray-400 mb-8 max-w-xl mx-auto">
-            Tempel link YouTube Anda, biarkan AI Klipiria mendeteksi momen terbaik
+            Tempel link YouTube Anda, biarkan AI Klipiria mendeteksi momen terbaik, memotong format vertikal, dan menambahkan subtitle instan.
+        </p>
+
+        <!-- Input Box Card -->
+        <div class="bg-cardBg p-6 rounded-2xl border border-gray-800 shadow-2xl max-w-2xl mx-auto w-full text-left">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Link YouTube / Podcast (AMA / Webinar)</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <input type="text" placeholder="https://www.youtube.com/watch?v=..." class="flex-grow bg-darkBg border border-gray-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyanAccent transition-colors">
+                <button onclick="alert('Demo Mode: Fitur proses video siap dihubungkan ke backend AI!')" class="bg-gradient-to-r from-cyanAccent to-blue-600 text-darkBg font-bold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-cyanAccent/20">
+                    Generate Klip
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 p-4 text-center text-xs text-gray-500">
+        Powered by Andria Technologies &copy; 2026 Klipiria. All rights reserved.
+    </footer>
+</body>
+</html>
