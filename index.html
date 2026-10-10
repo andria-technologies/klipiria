@@ -41,32 +41,63 @@
         </p>
 
         <!-- Platform Badges -->
-        <div class="flex justify-center gap-2 sm:gap-3 mb-8 flex-wrap">
-            <div class="bg-gray-900 text-red-400 px-3 py-1.5 rounded-xl border border-gray-800 text-xs sm:text-sm font-semibold flex items-center gap-1.5">
-                ▶ YouTube
-            </div>
-            <div class="bg-gray-900 text-pink-400 px-3 py-1.5 rounded-xl border border-gray-800 text-xs sm:text-sm font-semibold flex items-center gap-1.5">
-                📷 Instagram
-            </div>
-            <div class="bg-gray-900 text-blue-400 px-3 py-1.5 rounded-xl border border-gray-800 text-xs sm:text-sm font-semibold flex items-center gap-1.5">
-                👥 Facebook
-            </div>
-            <div class="bg-gray-900 text-cyan-400 px-3 py-1.5 rounded-xl border border-gray-800 text-xs sm:text-sm font-semibold flex items-center gap-1.5">
-                🎵 TikTok
-            </div>
+        <div class="flex justify-center gap-2 sm:gap-3 mb-6 flex-wrap">
+            <div class="bg-gray-900 text-red-400 px-3 py-1.5 rounded-xl border border-gray-800 text-xs sm:text-sm font-semibold">▶ YouTube</div>
+            <div class="bg-gray-900 text-pink-400 px-3 py-1.5 rounded-xl border border-gray-800 text-xs sm:text-sm font-semibold">📷 Instagram</div>
+            <div class="bg-gray-900 text-blue-400 px-3 py-1.5 rounded-xl border border-gray-800 text-xs sm:text-sm font-semibold">👥 Facebook</div>
+            <div class="bg-gray-900 text-cyan-400 px-3 py-1.5 rounded-xl border border-gray-800 text-xs sm:text-sm font-semibold">🎵 TikTok</div>
         </div>
 
         <!-- Input Box Card -->
-        <div class="bg-cardBg p-4 sm:p-6 rounded-2xl border border-gray-800 shadow-2xl max-w-2xl mx-auto w-full text-left">
+        <div class="bg-cardBg p-4 sm:p-6 rounded-2xl border border-gray-800 shadow-2xl max-w-2xl mx-auto w-full text-left mb-8">
             <label class="block text-xs sm:text-sm font-medium text-gray-300 mb-2">Tempel Link Video (YouTube, Instagram, Facebook, TikTok)</label>
             <div class="flex flex-col sm:flex-row gap-3">
-                <input type="text" placeholder="https://youtube.com/... atau tiktok.com/..." class="flex-grow bg-darkBg border border-gray-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyanAccent transition-colors">
-                <button onclick="alert('Demo Mode: Multi-platform AI Clipper engine siap dihubungkan!')" class="bg-gradient-to-r from-cyanAccent to-blue-600 text-darkBg font-bold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-cyanAccent/20 text-sm sm:text-base">
+                <input id="urlInput" type="text" placeholder="https://youtube.com/... atau tiktok.com/..." class="flex-grow bg-darkBg border border-gray-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-cyanAccent transition-colors">
+                <button onclick="simulateProcess()" class="bg-gradient-to-r from-cyanAccent to-blue-600 text-darkBg font-bold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-cyanAccent/20 text-sm sm:text-base">
                     Generate Klip
                 </button>
+            </div>
+        </div>
+
+        <!-- Mockup Result Section (Hidden by Default, shows on click) -->
+        <div id="resultSection" class="hidden bg-cardBg p-6 rounded-2xl border border-cyanAccent/30 shadow-2xl max-w-2xl mx-auto w-full text-left animate-pulse">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xs bg-cyanAccent/20 text-cyanAccent px-3 py-1 rounded-full font-bold">✨ AI Result Ready (9:16)</span>
+                <span class="text-xs text-gray-400">Viral Score: 94/100</span>
+            </div>
+            <div class="bg-darkBg rounded-xl p-4 border border-gray-800 flex flex-col sm:flex-row items-center gap-4">
+                <div class="w-full sm:w-36 h-48 bg-gray-900 rounded-lg border border-gray-700 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-cyanAccent/10 to-magentaAccent/10"></div>
+                    <span class="text-xs text-cyanAccent font-bold text-center px-2">"Potongan Momen Terbaik AI"</span>
+                </div>
+                <div class="flex-grow text-center sm:text-left">
+                    <h3 class="font-bold text-base mb-1 text-gray-200">Klip #1: Strategi Pertumbuhan Ekosistem</h3>
+                    <p class="text-xs text-gray-400 mb-3">Durasi: 0:28 detik • Auto Subtitle (EN & CN) Enabled</p>
+                    <div class="flex flex-wrap gap-2 justify-center sm:justify-start">
+                        <button onclick="alert('Downloading MP4 Vertical...')" class="bg-gray-800 hover:bg-gray-700 text-xs text-gray-200 px-3 py-2 rounded-lg border border-gray-700 font-medium">📥 Download MP4</button>
+                        <button onclick="alert('Subtitle exported!')" class="bg-gray-800 hover:bg-gray-700 text-xs text-gray-200 px-3 py-2 rounded-lg border border-gray-700 font-medium">📝 Export SRT</button>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-
+    <footer class="border-t border-gray-800 p-4 text-center text-xs text-gray-500">
+        Powered by Andria Technologies &copy; 2026 Klipiria. All rights reserved.
+    </footer>
+
+    <script>
+        function simulateProcess() {
+            const val = document.getElementById('urlInput').value;
+            if(!val) {
+                alert('Silakan masukkan link video terlebih dahulu!');
+                return;
+            }
+            const resSec = document.getElementById('resultSection');
+            resSec.classList.remove('hidden');
+            resSec.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
