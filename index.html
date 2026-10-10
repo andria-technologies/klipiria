@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klipiria - AI Video Clipper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        cyanAccent: '#00f2fe',
+                        magentaAccent: '#f72585'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-gray-100 font-sans min-h-screen flex flex-col justify-between">
+    <!-- Header -->
+    <header class="border-b border-gray-800 p-6 flex justify-between items-center max-w-6xl mx-auto w-full">
+        <div class="flex items-center space-x-2">
+            <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-cyanAccent to-magentaAccent bg-clip-text text-transparent">KLIPIRIA</span>
+            <span class="text-xs bg-gray-800 text-cyanAccent px-2 py-0.5 rounded-full border border-cyanAccent/30">AI v1.0</span>
+        </div>
+        <div class="text-sm text-gray-400">Investor Demo Mode</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto p-6 w-full flex-grow flex flex-col justify-center text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+            Ubah Video Panjang Jadi <span class="bg-gradient-to-r from-cyanAccent to-magentaAccent bg-clip-text text-transparent">Klip Viral</span> Otomatis
+        </h1>
+        <p class="text-gray-400 mb-8 max-w-xl mx-auto">
+            Tempel link YouTube Anda, biarkan AI Klipiria mendeteksi momen terbaik
